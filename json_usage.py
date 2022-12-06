@@ -22,3 +22,6 @@ with open('backup_config.json', 'w') as fh:
 #     print(key)
 #     for elem in elements:
 #         print("\t",elem)
+
+# let's say we storing a class object using json.dump, json.dump stores a reference to object on disk but not the object class code, therefore the class
+# imlementation should stay reachable

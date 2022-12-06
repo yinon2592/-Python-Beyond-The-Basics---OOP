@@ -36,6 +36,8 @@ import pickle
 # print(tup[2])
 # print(tup[3])
 
+# pickle.dump stores a reference to object on disk but not the object class code, therefore the class
+# imlementation should stay reachable
 class MyClass:
     def __init__(self, init_val):
         self.val = init_val
