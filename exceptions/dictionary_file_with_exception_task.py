@@ -1,5 +1,5 @@
 import sys
-from os.path import system, isfile
+from os.path import isfile
 
 class ConfigKeyError(Exception):
     def __init__(self, this, key):
@@ -14,7 +14,7 @@ class ConfigDict(dict):
         if not isfile(self._filename):
             try:
                 open(self._filename,'w').close()
-            except IOError("arg to ConfigDict must be a valid path")
+            except :IOError("arg to ConfigDict must be a valid path")
         with open(self._filename) as fh:
             for line in fh:
                 line = line.rstrip()
@@ -31,10 +31,10 @@ class ConfigDict(dict):
             raise ConfigKeyError(self, key)
         return dict.__getitem__(self,key)
 
-cc = ConfigDict("dict.txt")
-# open("dict.txt", 'w').close()
-# cc.clear()
-cc['a'] = 1
-cc['b'] = 2
-cc['c'] = 3
-system('cmd /c "type dict.txt"')
+# cc = ConfigDict("dict.txt")
+# # open("dict.txt", 'w').close()
+# # cc.clear()
+# cc['a'] = 1
+# cc['b'] = 2
+# cc['c'] = 3
+# system('cmd /c "type dict.txt"')
